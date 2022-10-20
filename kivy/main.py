@@ -10,6 +10,9 @@ Window.size = (350, 580)
 global screen
 screen = ScreenManager()
 
+class AboutScreen(Screen):
+    pass
+
 class SplashScreen(Screen):
     pass
 
@@ -23,9 +26,9 @@ class LoginScreen(Screen):
 
 
 screen.add_widget(SplashScreen(name='splash'))
-screen.add_widget(InitialScreen(name='inicio'))
+screen.add_widget(InitialScreen(name='initial'))
 screen.add_widget(LoginScreen(name='login'))
-
+screen.add_widget(SplashScreen(name='about'))
 
 
 class Apps(MDApp):
