@@ -25,7 +25,7 @@ class LoginScreen(Screen):
 
 
 screen.add_widget(SplashScreen(name='splash'))
-screen.add_widget(InitialScreen(name='inital'))
+screen.add_widget(InitialScreen(name='initial'))
 screen.add_widget(LoginScreen(name='login'))
 
 class Apps(MDApp):
