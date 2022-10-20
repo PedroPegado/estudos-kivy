@@ -2,19 +2,20 @@ ScreenManager:
     SplashScreen:
     InitialScreen:
     LoginScreen:
+    AboutScreen:
 
 <SplashScreen>:
     name: 'splash'    
     MDFloatLayout:
         md_bg_color: 218/255, 187/255, 159/255, 1
         Image:
-            source: "logo.png"
+            source: "images/logo.png"
         Button:
             background_normal: 'seta.png'
             border: 0,0,0,0
             size_hint: 0.12, 0.05
             pos_hint: {"center_x": .8, "center_y": 0.08}   
-            on_press: app.root.current = 'inicio'
+            on_press: app.root.current = 'inital'
             
 <InitialScreen>:
     name: "inital"

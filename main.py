@@ -10,6 +10,9 @@ Window.size = (350, 580)
 global screen
 screen = ScreenManager()
 
+class AboutScreen(Screen):
+    pass
+
 class SplashScreen(Screen):
     pass
 
