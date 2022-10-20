@@ -1,25 +1,35 @@
-#from kivy.app import App
-#from kivy.lang import Builder
-
-#GUI = Builder.load_file("screen.#kv")
-
-#class SplashScreen(App):
-#    def build(self):
-#        return GUI
-
-
-#if __name__ == "__main__":
-#    SplashScreen().run()
 from kivymd.app import MDApp
 from kivy.lang import Builder
+from kivy.uix.widget import Widget
+from kivy.core.window import Window
+from kivy.uix.screenmanager import Screen, ScreenManager
+from functions import callbacklogin, callbackregister
 
-GUI = Builder.load_file("screen.kv")
+Window.size = (350, 580)
 
-class MyApp(MDApp):
+global screen
+screen = ScreenManager()
+
+class SplashScreen(Screen):
+    pass
+
+class InitialScreen(Screen):
+    pass
+
+
+class LoginScreen(Screen):
+    pass
+
+
+screen.add_widget(SplashScreen(name='splash'))
+screen.add_widget(InitialScreen(name='inital'))
+screen.add_widget(LoginScreen(name='login'))
+
+class Apps(MDApp):
     def build(self):
-        self.theme_cls.theme_style = 'Dark'
-        self.theme_cls.primary_palette = 'Teal'
-        self.title = 'Appzinho Pika'
-        return GUI
-
-MyApp().run()
+        kv = Builder.load_file("tela.kv")
+        screen = kv
+        return screen
+    
+if __name__ == '__main__':
+    Apps().run()
