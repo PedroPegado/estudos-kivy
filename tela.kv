@@ -1,21 +1,7 @@
 ScreenManager:
-    SplashScreen:
     InitialScreen:
     LoginScreen:
     AboutScreen:
-
-<SplashScreen>:
-    name: 'splash'    
-    MDFloatLayout:
-        md_bg_color: 218/255, 187/255, 159/255, 1
-        Image:
-            source: "images/logo.png"
-        Button:
-            background_normal: 'images/seta.png'
-            border: 0,0,0,0
-            size_hint: 0.12, 0.05
-            pos_hint: {"center_x": .8, "center_y": 0.08}   
-            on_press: app.root.current = 'initial'
             
 <InitialScreen>:
     name: "initial"
@@ -60,9 +46,9 @@ ScreenManager:
         TextInput:
             id: 'text'
             size_hint_x: .9
-            pos_hint: {"center_x": .5, "center_y": .6}
+            pos_hint: {"center_x": .5, "center_y": .57}
             size_hint_y: None
-            height:20
+            height: 30
             width: 20
         Button:
             background_normal: "images/fundotexto.png"
