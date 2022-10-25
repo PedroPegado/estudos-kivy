@@ -6,29 +6,31 @@ ScreenManager:
 <InitialScreen>:
     name: "initial"
     MDFloatLayout:
-        md_bg_color: 218/255, 187/255, 159/255, 1
+        md_bg_color: 189/255, 159/255, 131/255, 1
+        name: 'fundo'
+        FitImage:
+            source: 'images/fundo.png'
         Image:
             source: "images/logo.png"
-            size_hint: .5, .5
+            size_hint: .7, .7
             pos_hint: {"center_x": .5, "center_y":.65}
-        Button:
-            background_normal: "images/fundotexto.png"
-            border: 0,0,0,0
-            text: "SOBRE O APP"
-            font_size: "17sp"
-            font_name: "fonts/Poppins-Regular.ttf"
+        MDFillRoundFlatButton:
+            text: "SOBRE"
+            font_style: "Button"
+            md_bg_color: 100/255, 37/255, 9/255
+            size_hint: .6, .09
+            pos_hint: {"center_x": .5, "center_y":.28}
+            on_press: app.root.current = 'about'
+            on_press: app.root.transition.direction = 'left'    
+
+        MDFillRoundFlatButton:
+            text: "COMEÇAR AGORA"
+            font_style: "Button"
+            md_bg_color: 100/255, 37/255, 9/255
             size_hint: .6, .09
             pos_hint: {"center_x": .5, "center_y":.4}
-            on_press: app.root.current = 'about'
-        Button:
-            background_normal: "images/fundotexto.png"
-            border: 0,0,0,0
-            text: "COMEÇAR AGORA"
-            font_size: "17sp"
-            font_name: "fonts/Poppins-Regular.ttf"
-            size_hint: .6, .09
-            pos_hint: {"center_x": .5, "center_y":.49}
             on_press: app.root.current = 'login'
+            on_press: app.root.transition.direction = 'left' 
         
 
 <LoginScreen>:
@@ -57,10 +59,10 @@ ScreenManager:
                 cursor_color: 0, 0, 0, 1
                 cursor_width: "2sp"
                 foreground_color: 255/255, 255/255, 255/255, 1
-                font_size: "13sp"
+                font_size: "16sp"
                 multiline: False
             MDFloatLayout:
-                pos_hint: {"center_x": .5, "center_y": 0.2}
+                pos_hint: {"center_x": .5, "center_y": 0.25}
                 size_hint_y: .02    
                 md_bg_color: 0/255, 0/255, 0/255, 1
 
@@ -82,11 +84,11 @@ ScreenManager:
                 cursor_color: 0, 0, 0, 1
                 cursor_width: "2sp"
                 foreground_color: 255/255, 255/255, 255/255, 1
-                font_size: "13sp"
+                font_size: "16sp"
                 multiline: False
                 password: True
             MDFloatLayout:
-                pos_hint: {"center_x": .5, "center_y": 0.2}
+                pos_hint: {"center_x": .5, "center_y": 0.25}
                 size_hint_y: .02    
                 md_bg_color: 0/255, 0/255, 0/255, 1
         
